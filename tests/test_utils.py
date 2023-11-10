@@ -96,17 +96,6 @@ def test_add_to_fstab(tmpdir):
     assert len(output.split()) == 6
 
 
-def test_add_to_fstab(tmpdir):
-    file = tmpdir.join("output.txt")
-    fsuuid = "12345678-1234-1234-1234-123456789012"
-    mount_point = "/mnt"
-    fstype = "ext4"
-    utils.add_to_fstab(fsuuid, mount_point, fstype, file.strpath)
-    output = file.read().strip()
-    assert output.startswith(f"UUID={fsuuid} {mount_point} {fstype}")
-    assert len(output.split()) == 6
-
-
 @pytest.mark.parametrize(
     "test_input,expected",
     [
