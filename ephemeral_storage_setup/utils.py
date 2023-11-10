@@ -160,6 +160,9 @@ def create_files(target, entries):
         if "uid" in e or "gid" in e:
             os.chown(full_path, e.get("uid", -1), e.get("gid", -1))
 
+        if "user" in e or "group" in e:
+            shutil.chown(full_path, user=e.get("uid"), group=e.get("gid"))
+
         if "mode" in e:
             mode = e["mode"]
             if isinstance(mode, str):

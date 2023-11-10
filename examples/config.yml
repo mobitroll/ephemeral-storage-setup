@@ -96,3 +96,12 @@ populate:
   #   - path: some/deep/path
   #     type: directory
   #     mode: "750"
+  #   - path: some/other/path
+  #     type: directory
+  #     mode: "755"
+  #     user: postgres
+  #     group: postgres
+  #   - path: yet/another/path
+  #     type: directory
+  #     mode: "755"
+  #     uid: 1001
